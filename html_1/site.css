@@ -1,0 +1,156 @@
+body{
+	background-color:; 
+	padding: 30px;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+#to-left{
+	float: left;
+}
+#to-right{
+	float: right;
+}
+.width_divs{
+	width: 100%;
+	max-width: 1200px;
+}
+#head{
+	height: 70px;
+	margin: auto;
+	margin-bottom: 50px;
+}
+#header{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 60px;
+	font-weight: bold;
+}
+#logo{
+	margin-left: 0;
+	white-space: pre-line;
+	float: left;
+}
+.block{
+	border: 5px solid red;
+	max-width: 800px;
+	left: 100px;
+	height: 800px;
+}
+#head_buttons{
+	margin-top: 10px;
+	float: right;
+	width: 100%;
+	max-width: 700px;
+}
+#head_buttons div{
+	float: right;
+}
+#middle{
+	border-top: 3px solid;
+	border-bottom: 3px solid;
+	width: 100%;
+	max-width: 1290px;
+	height: 500px;
+	margin: auto;
+}
+#middle .width_divs{
+	height: 100%;
+	margin: auto;
+	margin-top: 40px;
+}
+#middle_buttons{
+	float: left;
+	width: 100%;
+	max-width: 200px;
+	float: left;
+}
+#container{
+	float: right;
+	width: 100%;
+	max-width: 970px;
+}
+.tab{
+	border: 3px solid;
+	border-bottom: 0;
+	border-radius: 3px 3px 0 0;
+	height: 30px;
+	font-weight: bold;
+	cursor:pointer;
+}
+.tab:hover{
+	background-color: grey;
+}
+#container .tab{
+	display: inline-block;
+	margin-left: 5px;
+}
+#table{
+	border: 3px solid;
+	height: 350px;
+}
+#table div{
+	position: relative;
+	width: 100%;
+	max-width: 930px;
+	margin: auto;
+	margin-top: 20px;
+}
+table{
+	height: 250px;
+	width: 100%;
+	max-width: 930px;
+	border: 2px solid;
+}
+td{
+	border: 2px solid;
+}
+div input, #table div{
+	display: none;
+}
+#tab_1:checked ~ * #table_1,
+#tab_2:checked ~ * #table_2,
+#tab_3:checked ~ * #table_3{
+	display: block;
+}
+div #table_1{
+	background-color: #FFA07A;
+}
+div #table_2{
+	background-color: #FFB6C1;
+}
+div #table_3{
+	background-color: #FFEFD5;
+}
+.content-size{
+	width: 100%;
+	max-width: 
+}
+#bottom{
+	height: 100px;
+	margin: auto;
+	margin-top: 60px;
+}
+.button_div{
+	border: 3px solid;
+	width: 100%;
+	max-width: 200px;
+	line-height: 40px;
+	font-size: 18px;
+	font-weight: 700;
+	text-align: center;
+	border-radius: 7px;
+	box-shadow:0 3px 3px rgba(0,0,0,.4);
+	cursor:pointer;
+	transition:transform .3s ease-out;
+}
+.button_div:hover{
+	transform:scale(1.1);
+}
+#head_buttons .button_div{
+	margin: 15px;
+	margin-right: 0;
+}
+#middle_buttons .button_div{
+	margin-bottom: 15px;
+}
+.title{
+	font-weight: bold;
+}
