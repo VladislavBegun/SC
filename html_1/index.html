@@ -3,7 +3,7 @@
 <head>
 	<title>sc</title>
 
-	<link rel="stylesheet" href="css/site.css">
+	<link rel="stylesheet" href="site.css">
 
 	<meta http-equiv="Content-type">
 </head>
@@ -39,9 +39,13 @@
 				<div class="button_div" type="button">
 					BUTTON
 				</div>
-				<div class="button_div" type="button">
-					BUTTON
-				</div>
+				<input type="button" id="task" onclick="main()" />
+				<label for="task">
+					<div class="button_div" type="button">
+						TASK
+					</div>
+				</label>
+				
 			</div>
 
 			<div id="container">
@@ -65,90 +69,94 @@
 				</label>
 				
 				<div id="table">
+
 					<div id="table_1">
-						<table class="table" cellspacing="0">
-	                        <tr class="table__row">
+						<table cellspacing="0">
+	                        <tr>
 	                            <td class="title">Item 1</td>
 	                           	<td class="title">Item 2</td>
 	                            <td class="title">Item 3</td>
 	                        </tr>
-	                        <tr class="table__row">
-	                            <td class="table__column">Item 1</td>
-	                            <td class="table__column">Item 2</td>
-	                            <td class="table__column">Item 3</td>
+	                        <tr>
+	                            <td>Item 1</td>
+	                            <td>Item 2</td>
+	                            <td>Item 3</td>
 	                        </tr>
-	                        <tr class="table__row">
-	                            <td class="table__column">Item 1</td>
-	                            <td class="table__column">Item 2</td>
-	                            <td class="table__column"></td>
+	                        <tr>
+	                            <td>Item 1</td>
+	                            <td>Item 2</td>
+	                            <td></td>
 	                        </tr>
-	                        <tr class="table__row">
-	                            <td class="table__column">Item 1</td>
-	                            <td class="table__column">Item 2</td>
-	                            <td class="table__column"></td>
+	                        <tr>
+	                            <td>Item 1</td>
+	                            <td>Item 2</td>
+	                            <td></td>
 	                        </tr>
-	                        <tr class="table__row">
-	                            <td class="table__column">Item 1</td>
-	                            <td class="table__column">Item 2</td>
-	                            <td class="table__column"></td>
+	                        <tr>
+	                            <td>Item 1</td>
+	                            <td>Item 2</td>
+	                            <td></td>
 	                        </tr>
 	                    </table>
 					</div>
+
+					<script src="script.js"></script>
+
 					<div id="table_2">
-						<table class="table" cellspacing="0">
-	                        <tr class="table__row">
+						<table cellspacing="0">
+	                        <tr>
 	                            <td class="title">Item 4</td>
 	                           	<td class="title">Item 5</td>
 	                            <td class="title">Item 6</td>
 	                        </tr>
-	                        <tr class="table__row">
-	                            <td class="table__column">Item 4</td>
-	                            <td class="table__column">Item 5</td>
-	                            <td class="table__column">Item 6</td>
+	                        <tr>
+	                            <td>Item 4</td>
+	                            <td>Item 5</td>
+	                            <td>Item 6</td>
 	                        </tr>
-	                        <tr class="table__row">
-	                            <td class="table__column">Item 4</td>
-	                            <td class="table__column">Item 5</td>
-	                            <td class="table__column"></td>
+	                        <tr>
+	                            <td>Item 4</td>
+	                            <td>Item 5</td>
+	                            <td></td>
 	                        </tr>
-	                        <tr class="table__row">
-	                            <td class="table__column">Item 4</td>
-	                            <td class="table__column">Item 5</td>
-	                            <td class="table__column"></td>
+	                        <tr>
+	                            <td>Item 4</td>
+	                            <td>Item 5</td>
+	                            <td></td>
 	                        </tr>
-	                        <tr class="table__row">
-	                            <td class="table__column">Item 4</td>
-	                            <td class="table__column">Item 5</td>
-	                            <td class="table__column"></td>
+	                        <tr>
+	                            <td>Item 4</td>
+	                            <td>Item 5</td>
+	                            <td></td>
 	                        </tr>
 	                    </table>
 					</div>
 					<div id="table_3">
-						<table class="table" cellspacing="0">
+						<table cellspacing="0">
 	                        <tr class="table__row">
 	                            <td class="title">Item 7</td>
 	                            <td class="title">Item 8</td>
 	                            <td class="title">Item 9</td>
 	                        </tr>
-	                        <tr class="table__row">
-	                            <td class="table__column">Item 7</td>
-	                            <td class="table__column">Item 8</td>
-	                            <td class="table__column">Item 9</td>
+	                        <tr>
+	                            <td>Item 7</td>
+	                            <td>Item 8</td>
+	                            <td>Item 9</td>
 	                        </tr>
-	                        <tr class="table__row">
-	                            <td class="table__column">Item 7</td>
-	                            <td class="table__column">Item 8</td>
-	                            <td class="table__column"></td>
+	                        <tr>
+	                            <td>Item 7</td>
+	                            <td>Item 8</td>
+	                            <td></td>
 	                        </tr>
-	                        <tr class="table__row">
-	                            <td class="table__column">Item 7</td>
-	                            <td class="table__column">Item 8</td>
-	                            <td class="table__column"></td>
+	                        <tr>
+	                            <td>Item 7</td>
+	                            <td>Item 8</td>
+	                            <td></td>
 	                        </tr>
-	                        <tr class="table__row">
-	                            <td class="table__column">Item 7</td>
-	                            <td class="table__column">Item 8</td>
-	                            <td class="table__column"></td>
+	                        <tr>
+	                            <td>Item 7</td>
+	                            <td>Item 8</td>
+	                            <td></td>
 	                        </tr>
 	                    </table>
 					</div>
