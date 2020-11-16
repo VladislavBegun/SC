@@ -104,7 +104,7 @@ function searchPrimeNumbers(number) {
 				i = p*p;
 			}
 
-			setTimeout(paintTD, 1000);
+			setTimeout(paintTD, 200);
 		}
 		else {
 			i += p;
