@@ -1,10 +1,16 @@
 function main () {
 
-	let number;
+	let number = prompt('Input number(max 100)', 100);
 
-	do {
-		number = prompt('Input number(max 100)', 100);
-	} while ( number > 100 || number < 0 );
+	if (number === null) {
+		return;
+	}
+	else {
+		if ( number > 100 || number < 0 || isNaN(number) ) {
+			alert("Incorrect input");
+			return;
+		}
+	}
 
 	if(number == 1)
 		paintTable(1, 1);
@@ -72,65 +78,66 @@ function paintTable (count_tr, count_td) {
 	
 function searchPrimeNumbers(number) {
 
-	let p = 2, i = p*p, j = 2, arr = primeNumbersArr(number), arr_help = [];
+	let arr = primeNumbersArr(number), arr_help = [], value = {
+		p: 2,
+		i: 0
+	};
+
+	value.i = value.p * value.p;
+
+	alert(value.i);
 
 	for (var m = 0; m < number; m++) {
 		arr_help[m] = false;
 	}
 
 	setTimeout(function paintTD() {
-		
-		if (!arr_help[i]) {
-			let element = document.querySelectorAll('td')[i - 1];
+
+		if (!arr_help[value.i]) {
+
+			let element = document.querySelectorAll('td')[value.i - 1];
 			element.style.background = 'red';
-			arr_help[i] = true;
-			
-			i += p;
-			
-			if (i > number) {
+			arr_help[value.i] = true;
 
-				p++;
-
-				if (p*p > number) {
-					alert("The table is filled");
-					return;
-				}
-
-				for ( ; ; p++) {
-					if (arr[p]) {
-						break;
-					}
-				}
-				i = p*p;
-			}
+			value = algorithm(value, number, arr);
 
 			setTimeout(paintTD, 200);
 		}
 		else {
-			i += p;
-			
-			if (i > number) {
 
-				p++;
-
-				if (p*p > number) {
-					alert("The table is filled");
-					return;
-				}
-
-				for ( ; ; p++) {
-					if (arr[p]) {
-						break;
-					}
-				}
-				i = p*p;
-			}
+			value = algorithm(value, number, arr);
 
 			setTimeout(paintTD, 0);
 		}
 			
 	}, 1000);
 		
+}
+
+function algorithm (value, number, arr) {
+
+	value.i += value.p;
+
+	if (value.i > number) {
+
+				value.p++;
+
+				if (value.p*value.p > number) {
+					alert("The table is filled");
+					return;
+				}
+
+				for ( ; ; value.p++) {
+
+					if (arr[value.p]) {
+						break;
+					}
+
+				}
+				value.i = value.p*value.p;
+	}
+	return value;
+
 }
 
 function primeNumbersArr (length) {
