@@ -85,8 +85,6 @@ function searchPrimeNumbers(number) {
 
 	value.i = value.p * value.p;
 
-	alert(value.i);
-
 	for (var m = 0; m < number; m++) {
 		arr_help[m] = false;
 	}
