@@ -83,26 +83,25 @@ let FirstWarrior, SecondWarrio, TheEnd = false;
 
 async function fight(FirstWarrior, SecondWarrior) {
     return new Promise((resolve, reject) => {
-
         setTimeout(() => {
             switch (Math.round(Math.random())) {
                 case 0:
                     FirstWarrior.Action(SecondWarrior);
+                    SecondWarrior.Action(FirstWarrior);
                     break;
                 case 1:
                     SecondWarrior.Action(FirstWarrior);
+                    FirstWarrior.Action(SecondWarrior);
                     break;
             }
             if (FirstWarrior.isDeath() || SecondWarrior.isDeath()) {
                 TheEnd = true;
                 return;
             }
-            if (FirstWarrior.isAttack || SecondWarrior.isAttack) {
-                if (FirstWarrior.isAttack)
-                    FirstWarrior.isAttack = false;
-                else
-                    SecondWarrior.isAttack = false;
-            }
+            if (FirstWarrior.isAttack)
+                FirstWarrior.isAttack = false;
+            if (SecondWarrior.isAttack)
+                SecondWarrior.isAttack = false;
             resolve();
         }, 1000);
     })
@@ -119,7 +118,7 @@ async function main() {
 // Выберите класс война
 
 // Первый воин
-switch () {
+switch (2) {
     case 1:
         FirstWarrior = new HeavyWarrior("first warrior");
         break;
@@ -132,7 +131,7 @@ switch () {
 }
 
 // Второй воин
-switch () {
+switch (2) {
     case 1:
         SecondWarrior = new HeavyWarrior("second warrior");
         break;
