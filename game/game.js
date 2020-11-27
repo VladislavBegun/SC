@@ -118,7 +118,7 @@ async function main() {
 // Выберите класс война
 
 // Первый воин
-switch (2) {
+switch () {
     case 1:
         FirstWarrior = new HeavyWarrior("first warrior");
         break;
@@ -131,7 +131,7 @@ switch (2) {
 }
 
 // Второй воин
-switch (2) {
+switch () {
     case 1:
         SecondWarrior = new HeavyWarrior("second warrior");
         break;
