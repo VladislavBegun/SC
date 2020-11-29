@@ -70,10 +70,10 @@ class Tree {
 
     Remove(key) {
         let current = this.root,
-            parent_rem_el = null,
-            replace_el, parent_replace_el, rem_el;
+            parentRemoveElement = null,
+            replaceElement, parentReplaceElement, removeElement;
         while (current.key != key) {
-            parent_rem_el = current;
+            parentRemoveElement = current;
             if (key < current.key)
                 current = current.left;
             else
@@ -82,40 +82,40 @@ class Tree {
                 break;
         }
         if (current)
-            rem_el = current;
+            removeElement = current;
         else
-            rem_el = parent_rem_el;
-        if (rem_el == null) {
+            removeElement = parentRemoveElement;
+        if (removeElement == null) {
             cout << "\nNot found\n";
             return;
         }
-        if (rem_el.left == null)
-            replace_el = rem_el.right;
-        else if (rem_el.right == null)
-            replace_el = rem_el.left;
+        if (removeElement.left == null)
+            replaceElement = removeElement.right;
+        else if (removeElement.right == null)
+            replaceElement = removeElement.left;
         else {
-            parent_replace_el = rem_el;
-            replace_el = rem_el.left;
-            while (replace_el.right != null) {
-                parent_replace_el = replace_el;
-                replace_el = replace_el.right;
+            parentReplaceElement = removeElement;
+            replaceElement = removeElement.left;
+            while (replaceElement.right != null) {
+                parentReplaceElement = replaceElement;
+                replaceElement = replaceElement.right;
             }
-            if (parent_replace_el == rem_el)
-                replace_el.right = rem_el.right;
+            if (parentReplaceElement == removeElement)
+                replaceElement.right = removeElement.right;
             else {
-                replace_el.right = rem_el.right;
-                parent_replace_el.right = replace_el.left;
-                replace_el.left = parent_replace_el;
+                replaceElement.right = removeElement.right;
+                parentReplaceElement.right = replaceElement.left;
+                replaceElement.left = parentReplaceElement;
             }
         }
-        if (rem_el == this.root)
-            this.root = replace_el;
+        if (removeElement == this.root)
+            this.root = replaceElement;
         else
-        if (rem_el.key < parent_rem_el.key)
-            parent_rem_el.left = replace_el;
+        if (removeElement.key < parentRemoveElement.key)
+            parentRemoveElement.left = replaceElement;
         else
-            parent_rem_el.right = replace_el;
-        console.log(`\nDelete ${rem_el.key}`);
+            parentRemoveElement.right = replaceElement;
+        console.log(`\nDelete ${removeElement.key}`);
     }
 
     RCL(node) {
