@@ -12,7 +12,7 @@ class Human {
     }
     Action(enemy) {
         let value = (this.stamina < 20) ?
-            ((this.stamina < 10) ? 1 : 2 + Math.round(Math.random())) : ((enemy.isAttack) ?
+            ((this.stamina < 10) ? 2 : 2 + Math.round(Math.random())) : ((enemy.isAttack) ?
                 this.arr[Math.round(Math.random() * 3)] :
                 1 + Math.round(Math.random()));
         switch (value) {
