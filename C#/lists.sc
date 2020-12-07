@@ -28,11 +28,19 @@ namespace lists
                 pointer = pointer.next;
             }
         }
-        static void Pop()
+        static void ViewQueue()
         {
-            Stack tmp = top;
-            int value = top.value;
-            top = top.next;
+            if (begin == null)
+            {
+                Console.WriteLine("Cписок пуст");
+                return;
+            }
+            Queue t = begin;
+            while (t != null)
+            {
+                Console.WriteLine(t.value);
+                t = t.next;
+            }
         }
         static void PushInEnd(int value)
         {
@@ -71,6 +79,21 @@ namespace lists
             tmp.next = top;
             top = tmp;
         }
+        static void PopByIndex(int value)
+        {
+            Push(0);
+            Stack tmp = top;
+            do
+            {
+                if(tmp.next.value == value)
+                {
+                    tmp.next = tmp.next.next;
+                    break;
+                }
+                tmp = tmp.next;
+            } while (tmp != null);
+            top = top.next;
+        }
         static void SortStack()
         {
             Stack pointer = null, t = null, help = null;
@@ -91,7 +114,7 @@ namespace lists
                     }
                     pointer = t.next;
                 } while (top.next.next != pointer);
-                Pop();
+                top = top.next;
             }
         }
         static void Main(string[] args)
@@ -100,22 +123,21 @@ namespace lists
             PushInEnd(5);
             PushInEnd(13);
             PushInEnd(12);
-            Console.WriteLine(end.value);
-            Console.WriteLine(begin.value);
             PushInBegin(4);
             PushInBegin(6);
             PushInBegin(7);
             PushInBegin(8);
-            Console.WriteLine(end.prev.value);
-            Console.WriteLine(begin.value);
-
+            ViewQueue();
+            Console.WriteLine("\n");
             Push(5);
             Push(6);
             Push(4);
             Push(2);
             Push(3);
             ViewStack();
+            PopByIndex(4);
             SortStack();
+            Console.WriteLine("\n");
             ViewStack();
         }
     }
